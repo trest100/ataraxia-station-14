@@ -6,13 +6,9 @@ namespace Content.Shared.Standing;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class StandingStateComponent : Component
 {
-    [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-    [Access(typeof(StandingStateSystem))]
-    public sealed partial class StandingStateComponent : Component
-    {
-        [ViewVariables(VVAccess.ReadWrite)]
-        [DataField]
-        public SoundSpecifier? DownSound { get; private set; } = new SoundCollectionSpecifier("BodyFall");
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
+    public SoundSpecifier DownSound { get; private set; } = new SoundCollectionSpecifier("BodyFall");
 
     // WD EDIT START
     [DataField, AutoNetworkedField]
